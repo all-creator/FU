@@ -10,10 +10,13 @@
 
 ## Карта репозитория
 ![Карта репозитория](https://github.com/all-creator/FU/raw/master/resources/img/graf.png)
-Это должно быть здесь вследствие того что ~~Microsoft сделали из GitHub кусок говна~~ GitHub не поддерживает адоптивные диаграммы.
+
+
 ```mermaid
+
 flowchart LR;
     A[WEB] --> B(HTML)
     B --> C([First])
     B --> D([Second])
 ```
+Это должно быть здесь вследствие того что ~~Microsoft сделали из GitHub кусок говна~~ GitHub не поддерживает адоптивные диаграммы.
