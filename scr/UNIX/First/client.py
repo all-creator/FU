@@ -1,8 +1,8 @@
 import socket
 
+sock = socket.socket()
+sock.setblocking(True)
 while True:
-    sock = socket.socket()
-    sock.setblocking(True)
     sock.connect(('127.0.0.1', 9090))
 
     msg = input()
@@ -10,7 +10,7 @@ while True:
 
     data = sock.recv(1024)
 
-    if msg:
+    if msg == "exit":
         sock.close()
 
     print(data.decode())
