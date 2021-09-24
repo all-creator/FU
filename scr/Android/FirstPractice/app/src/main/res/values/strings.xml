@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="android_id_id_main_textview">android:id=@+id/text1</string>
+    <string name="clicks">Кнопка нажата 0 раз</string>
+    <string name="click_add">+1</string>
+    <string name="click_remove">-1</string>
+    <string name="set_zero">0</string>
+</resources>

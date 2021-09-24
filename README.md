@@ -4,10 +4,12 @@
 
 ### WEB
 
-#### HTML
-
 * [X] **[First](/scr/WEB/HTML/First) - Первое домашнее задание** - номер файла = номер задания; задание 33 - Задача 1 -> http://empire-org.fun:8080/fu-data
-* [ ] **[Second](/scr/WEB/HTML/Second) - Второе домашнее задание** - номер файла = номер задания;
+* [X] **[Second](/scr/WEB/HTML/Second) - Второе домашнее задание** - номер файла = номер задания;
+
+### Android
+
+* [X] **[First](/scr/Android/FirstPractice/app) - Первая Практическая Работа** - в папке app всё приложение; в папке apk, APK файл приложения
 
 ## Карта репозитория
 
@@ -16,9 +18,11 @@
 ```mermaid
 
 flowchart LR;
-    A[WEB] --> B(HTML)
-    B --> C([First])
-    B --> D([Second])
+    A[scr] --> BW(WEB)
+    A[scr] --> BA(Android)
+    BA --> CA([FirstPractice])
+    BW --> CW([First])
+    BW --> DW([Second])
 ```
 
 Это должно быть здесь вследствие того что ~~Microsoft сделали из GitHub кусок говна~~ GitHub не поддерживает адоптивные диаграммы.
