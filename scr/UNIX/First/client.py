@@ -35,9 +35,9 @@ def find_port(adr):
     cof = 100
     for i in range(1024, 65535, cof):
         cof_i = i+cof if i+cof <= 65535 else 65535
-        print("Запускаю поток: " + str(i) + ", " + str(cof_i))
+        #print("Запускаю поток: " + str(i) + ", " + str(cof_i))
         thead_count += 1
-        print("Кол-во потоков: " + str(thead_count))
+        #print("Кол-во потоков: " + str(thead_count))
         find = Thread(target=find_port_from_to, args=(adr, i, cof_i))
         find.start()
 
