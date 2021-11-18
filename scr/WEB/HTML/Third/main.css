@@ -1,0 +1,400 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;400&display=swap');
+@import url(http://fonts.googleapis.com/css?family=Open_Sans:700,400&subset=latin);
+.container-fluid{
+    padding: 0;
+    margin: 0;
+}
+.nav-item{
+    padding-right: 15%;
+}
+.navbar-nav last-child{
+    margin-right: 10%;
+}
+.top-nav-slide{
+    position: relative;
+    width: 100%;
+}
+.box{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.nav{
+    z-index: 9;
+    margin-top: 3%;
+}
+.header{
+    z-index: 9;
+    margin-top: 20%;
+}
+.lighter{
+    font-weight: lighter;
+}
+.nav-top>.nav-link{
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.9em;
+    letter-spacing: 0.3em;
+    background-image:linear-gradient(to left, #4caf50, #4caf50);
+    background-repeat: no-repeat;
+    background-size: 50% 2px;
+    background-position: right bottom, 1px 0;
+}
+.nav-top>.nav-link:hover{
+    animation: navLinkAnim 0.4s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes navLinkAnim{
+    from{
+        background-image:linear-gradient(to left, #4caf50, #4caf50);
+        background-repeat: no-repeat;
+        background-size: 50% 2px;
+        background-position: right bottom, 1px 0;
+    }
+    to{
+        background-image:linear-gradient(to left, #4caf50, #4caf50);
+        background-repeat: no-repeat;
+        background-size: 100% 2px;
+        background-position: right bottom, 1px 0;
+    }
+}
+.carousel-indicators [data-bs-target]{
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5em;
+    color: #ffffff;
+    height: auto;
+    text-indent: 0;
+    background: transparent;
+    margin-right: 0.25em;
+}
+.carousel-indicators>button.active {
+    margin-bottom: 1%;
+    font-size: 2.3em;
+    background-image:linear-gradient(to right, #4caf50, #4caf50);
+    background-repeat: no-repeat;
+    background-size:  110% 3px;
+    background-position: left center;
+}
+.carousel-indicators> button:before {
+    position: absolute;
+    height: 3px;
+    content: " ";
+    z-index: 10;
+    width: 13px;
+    top: 43%;
+    margin-left: -0.5px;
+    background: #4CAF50;
+    opacity: 0%;
+}
+
+.carousel-indicators> button.active:before {
+    opacity: 100%;
+}
+.header>h2{
+    font-family: 'Oswald', sans-serif;
+    font-size: 4em;
+    letter-spacing: 0.2em;
+    font-weight: 500;
+}
+.header>h6{
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 0.2em;
+    margin-top: 2%;
+    font-weight: 400;
+}
+.intro{
+    margin-top: 10%;
+}
+.introduction-img{
+    max-width: 35%;
+    height: auto;
+}
+.weare{
+    font-weight: bold;
+    font-size: 2.3em;
+    color: #333333;
+    margin-top: 30%;
+}
+.squad{
+    font-size: 2.7em;
+    font-family: OpenSans;
+    color: #504e4e;
+}
+h2{
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.5em;
+}
+.card{
+    margin-top: 20%;
+    border: none;
+    border-radius: 0;
+}
+.card-serv-title.card-title{
+    font-family: 'Oswald', sans-serif;
+    color: #252525;
+    padding-bottom: 5%;
+    font-size: 1.5em;
+    background-image:linear-gradient(to right, #252525, #252525);
+    background-repeat: no-repeat;
+    background-size: 1.5em 2px;
+    background-position: left 1px bottom;
+}
+.card-serv-text.card-text{
+    margin-top: 20%;
+}
+.service-img{
+    box-shadow: 0px 0px 15px 3px #DBDBDB;
+    border-radius: 50%;
+}
+.serv-link{
+    text-decoration: none;
+}
+.serv-link:hover>.card{
+    background-image:linear-gradient(to left, #4caf50, #4caf50);
+    background-repeat: no-repeat;
+    background-size: 100% 3px;
+    background-position: right bottom, 1px 0;
+}
+.serv-link:hover>.card>.card-body>.card-text>span{
+    color: #252525;
+    font-weight: normal;
+}
+.section-header{
+    margin-top: 10%;
+    padding-bottom: 7%;
+    background-image:linear-gradient(to right, #252525, #252525);
+    background-repeat: no-repeat;
+    background-size: 10% 2px;
+    background-position: left 1px bottom;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+}
+.works-list{
+    font-size: 0.7em;
+}
+.works-list>.nav-item{
+    padding-right: 2%;
+    margin: 0;
+}
+.works-list>.nav-item>.nav-link{
+    text-decoration: none;
+    color: #252525;
+    opacity: 30%;
+}
+.works-list>.nav-item>.nav-link:hover{
+    opacity: 100%;
+}
+#works, #services, #team, #feedback, #contact{
+    margin-top: 9%;
+}
+.work-card{
+    margin-top: -30%;
+}
+.work-card-title{
+    font-family: 'Oswald', sans-serif;
+    font-size: 3em;
+    margin-top: -40%;
+}
+.work-card-title.left{
+    margin-left: -22%;
+    width: 75%;
+}
+.work-card-title.right{
+    margin-left: 85%;
+    width: 45%;
+}
+.work-card-text	{
+    font-family: 'Oswald', sans-serif;
+    margin-top: 3em;
+    width: 70%;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+}
+.work-card-label {
+    font-family: 'Oswald', sans-serif;
+    width: 70%;
+    font-size: 0.8em;
+    letter-spacing: 0.1em;
+    color: #252525;
+    opacity: 40%;
+    margin-top: 1em;
+}
+.work-card-text.left{
+    margin-left: 25%;
+}
+.work-card-label.left{
+    margin-left: 25%;
+}
+.read.left{
+    margin-left: 25%;
+}
+.read{
+    visibility: hidden;
+    width: 70%;
+    margin-top: 0.5em;
+}
+.works-link{
+    text-decoration: none;
+    color: #252525;
+}
+.works-link:hover{
+    color: #252525;
+}
+.works-link:hover>.card>.card-body>.card-title{
+    text-decoration: #4caf50 line-through 5%;
+}
+.works-link:hover>.card>.card-body>.read{
+    visibility: visible;
+    text-decoration: #4caf50 line-through 15%;
+}
+.view-more{
+    font-family: 'Oswald', sans-serif;
+    color: #252525;
+    text-decoration: none;
+}
+.view-more:hover{
+    color: #252525;
+}
+.view-more-block{
+    margin-top: 33%;
+}
+.image-placeholder{
+    font-family: 'Oswald', sans-serif;
+    background-color: #ffffff;
+    opacity: 50%;
+    height: 2.5em;
+    width: 100%;
+    margin-top: -14%;
+    font-size: 1.5em;
+}
+a.team-link{
+    text-decoration: none;
+    color: #252525;
+}
+a.team-link:hover>.image-placeholder{
+    opacity: 0;
+}
+a.team-link:hover>.team-image-label{
+    opacity: 99%;
+}
+.team-image-label{
+    font-family: 'Oswald', sans-serif;
+    background-color: #ffffff;
+    height: 8em;
+    width: 100%;
+    margin-top: -30%;
+    opacity: 0;
+}
+.team-image-label>span{
+    font-size: 1.5em;
+    background-image:linear-gradient(to left, #252525, #252525);
+    background-repeat: no-repeat;
+    background-size: 1.5em 2px;
+    background-position: 50% bottom;
+}
+.team-image-label>h5{
+    margin-top: 3%;
+    font-size: 1.25em;
+}
+.team-image-label>h6{
+    margin-top: 3%;
+    font-size: 0.8em;
+}
+.carousel-item.text-center{
+    font-family: 'Oswald', sans-serif;
+
+}
+.feedback-author{
+    margin-top: 2em;
+}
+.feedback-number{
+    margin-top: 1.75em;
+}
+.stars>img{
+    width: 1.25em;
+}
+.star_op {
+    opacity: 0.2;
+}
+.work, .us{
+    font-family: 'Oswald', sans-serif;
+}
+.us{
+    color: #ffffff;
+    background-color: #70bd59;
+}
+.work>img, .us>img{
+    margin-top: 3em;
+    margin-bottom: 3em;
+    height: 3em;
+}
+.work>h6, .us>h6{
+    margin-top: 1.5em;
+    letter-spacing: 0.2em;
+}
+.footer{
+    background-color: #2e2e2e;
+}
+.address>p{
+    font-family: 'Oswald', sans-serif;
+    color: #ffffff;
+    opacity: 50%;
+    font-size: 1em;
+}
+.address>p:first-child{
+    margin-top: 8em;
+}
+.endd{
+    margin-top: 1em;
+    margin-right: 1em;
+    height: 1.7em;
+    opacity: 50%;
+    margin-bottom: 3em;
+}
+.endd:hover{
+    opacity: 100%;
+}
+.footer-line{
+    font-family: 'Oswald', sans-serif;
+    height: 5em;
+    width: auto;
+    color: #ffffff;
+    background-color: #252525;
+}
+.footer-line>p{
+    margin: 0;
+    padding: 0;
+    opacity: 50%;
+}
+.fn {
+    font-family: Oswald;
+    color: #FFFFFF;
+    position: center;
+    font-family: Oswald;
+    font-style: normal;
+}
+
+.verh {
+
+    float: left;
+    margin-right:10%;
+}
+.vbok {
+    margin-left: 55%;
+}
+.loremour {
+    color: #777777;
+    font-family: OpenSans;
+}
+.podz {
+    font-family: OpenSans;
+    color: #FFFFFF;
+}
+.OpTxt {
+    color: #373737;
+    font-family: OpenSans;
+}
+.prozr {
+    opacity: 0.8;
+}

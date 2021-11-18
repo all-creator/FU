@@ -9,8 +9,11 @@
 
 ### WEB
 
-* [X] **[First](/scr/WEB/HTML/First) - Первое домашнее задание** - номер файла = номер задания; задание 33 - Задача 1 -> http://empire-org.fun:8080/fu-data
-* [X] **[Second](/scr/WEB/HTML/Second) - Второе домашнее задание** - номер файла = номер задания;
+* [X] **[First](/scr/WEB/HTML/First) - Первое домашнее задание 1-2** - номер файла = номер задания; задание 33 - Задача 1 -> http://empire-org.fun:8080/fu-data
+* [X] **[Second](/scr/WEB/HTML/Second) - Второе домашнее задание 3-4**
+* [X] **[Third](/scr/WEB/HTML/Third) - Третье домашнее задание 5-6** 
+* [] **[Four](/scr/WEB/HTML/Four) - Четвёртое домашнее задание 7-8**
+* [X] **[Five](/scr/WEB/HTML/Four) - Пятое домашнее задание 9-10**
 
 ### Android
 
