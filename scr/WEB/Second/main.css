@@ -1,0 +1,19 @@
+#head {
+    color: blueviolet;
+}
+
+main, html {
+    width: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #f7f7f7;
+}
+
+.form-group.required .form-label:after {
+    content:"*";
+    color:red;
+}
+

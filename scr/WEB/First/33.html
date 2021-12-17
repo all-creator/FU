@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--http://empire-org.fun:8080/fu-data-->
+<html lang="en" style="height: 100%;">
+<head>
+    <meta charset="UTF-8">
+    <title>Соц. Опрос</title>
+</head>
+<body style="height: 100%;">
+<div id="main" style="background: teal; border-radius: 5px; height: 100%;">
+    <div id="heading" style="margin-bottom: 50px;">
+        <h1 style="text-align: center; margin: 0; padding-top: 5%; color: orangered">Оцените качество Финашки</h1>
+    </div>
+    <div id="contacts" style="background: aliceblue; border-radius: 10px; margin-left: 20%; margin-right: 20%;">
+        <div id="post-heading" style="text-align: center; margin: 3%;"><h2 style="padding-top: 2%;">Обратная связь</h2></div>
+        <form id="form_input" style="margin: 10px 20%;font-size: 1.1em; padding: 10px 2%;">
+            <label for="name">Имя <span style="color: darkred">*</span></label><br>
+            <input type="text" placeholder="Введите имя" name="name" id="name" style="margin-bottom: 15px;"><br>
+            <label for="email">Ваша почта <span style="color: darkred">*</span></label><br>
+            <input type="text" placeholder="Введите email" name="email" id="email" style="margin-bottom: 15px;"><br>
+            <label for="group">Ваше направление <span style="color: darkred">*</span></label><br>
+            <input type="text" placeholder="Введите направление" name="group" id="group" style="margin-bottom: 15px;"><br>
+            <label for="male">Ваш пол <span style="color: darkred">*</span></label><br>
+            <select name="male" id="male" style="margin-bottom: 15px;">
+                <option>Мужской</option>
+                <option>Женский</option>
+            </select><br>
+            <label for="radio">Ваш курс <span style="color: darkred">*</span></label><br>
+            <div id="radio" style="margin-bottom: 10px; margin-top: 1px">
+                <span><input type="radio" name="number" checked> 1</span>
+                <span><input type="radio" name="number" > 2</span>
+                <span><input type="radio" name="number" > 3</span>
+                <span><input type="radio" name="number"> 4</span><br>
+            </div>
+            <label for="message">Сообщение <span style="color: darkred">*</span></label><br>
+            <textarea placeholder="Что вам нравится/не нравится в нашем ВУЗе" name="message" id="message" style="margin-bottom: 15px; height: 100px; width: 70%"></textarea><br>
+            <div id="mess_send" style="text-align: center">
+                <button style="border-radius: 5px; padding: 5px 9px; font-size: 1em; cursor: pointer;" >
+                    Отправить
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
