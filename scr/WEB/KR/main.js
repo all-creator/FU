@@ -75,7 +75,7 @@ function answer(char){
     } else {
         printLabel("Не верно!")
         p_one.c_errors--;
-        document.getElementById('c_errors').value = "Осталось ошибок: " + p_one.c_errors
+        document.getElementById('c_errors').innerHTML = "Осталось ошибок: " + p_one.c_errors
         document.getElementById(char).style.color = 'red';
     }
     document.getElementById('w_st').onclick = function() {
