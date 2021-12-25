@@ -53,8 +53,25 @@
         <span id="я">Я</span>
     </span>
 </div>
+<button id="rest" class="btn">Рестарт</button>
 </body>
 <script>
+    document.getElementById('rest').onclick = function() {
+        document.getElementById('alf').hidden = true
+        document.getElementById('c_errors').hidden = true
+        document.getElementById('w_st').hidden = true
+        document.getElementById('w_c').hidden = true
+        document.getElementById('w').hidden = true
+        document.getElementById('word_input').hidden = true
+        document.getElementById('start').hidden = false
+        printInv("Висилица!")
+        game.word = ""
+        game.ans_word = ""
+        p_one.c_errors = 9
+        p_two.c_errors = 9
+        p_one.isDo = false
+        p_two.isDo = false
+    }
     document.getElementById('alf').hidden = true
     document.getElementById('c_errors').hidden = true
     document.getElementById('w_st').hidden = true
