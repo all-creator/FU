@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Висилица</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="main.js"></script>
+</head>
+<body>
+<h1 class="invite">Висилица!</h1>
+<button id="start" class="btn">Начать игру</button>
+<label class="label" for="word_input"></label>
+<input id="word_input">
+<button id="w_st" class="btn">Ввод</button>
+<span id="c_errors">Осталось ошибок: 9</span>
+<div class="word">
+    <span id="w_c"></span>
+    <span id="w"></span>
+</div>
+<div class="alf">
+    <span id="alf">
+        <span id="а">А</span>
+        <span id="б">Б</span>
+        <span id="в">В</span>
+        <span id="г">Г</span>
+        <span id="д">Д</span>
+        <span id="е">Е</span>
+        <span id="ё">Ё</span>
+        <span id="ж">Ж</span>
+        <span id="з">З</span>
+        <span id="и">И</span>
+        <span id="к">К</span>
+        <span id="л">Л</span>
+        <span id="м">М</span>
+        <span id="н">Н</span>
+        <span id="о">О</span>
+        <span id="п">П</span>
+        <span id="р">Р</span>
+        <span id="с">С</span>
+        <span id="т">Т</span>
+        <span id="у">У</span>
+        <span id="ф">Ф</span>
+        <span id="х">Х</span>
+        <span id="ц">Ц</span>
+        <span id="ч">Ч</span>
+        <span id="ш">Ш</span>
+        <span id="щ">Щ</span>
+        <span id="ъ">Ъ</span>
+        <span id="ы">Ы</span>
+        <span id="ь">Ь</span>
+        <span id="э">Э</span>
+        <span id="ю">Ю</span>
+        <span id="я">Я</span>
+    </span>
+</div>
+</body>
+<script>
+    document.getElementById('alf').hidden = true
+    document.getElementById('c_errors').hidden = true
+    document.getElementById('w_st').hidden = true
+    document.getElementById('word_input').hidden = true
+    document.getElementById('start').onclick = function() {
+        startGame()
+        document.getElementById('w_st').hidden = false
+        document.getElementById('start').hidden = true
+        document.getElementById('alf').hidden = false
+        document.getElementById('word_input').hidden = false
+    };
+    document.getElementById('w_st').onclick = function() {
+        setWord(document.getElementById('word_input').value);
+        document.getElementById('c_errors').hidden = false
+        document.getElementById('w_c').innerHTML = "Кол-во букв в слове: " + game.word.length
+        let str_w = ""
+        for (let i = 0; i < game.word.length; i++) {
+            str_w += "_"
+        }
+        document.getElementById('w').innerHTML = str_w
+        game.ans_word = str_w
+        document.getElementById('word_input').value = ""
+    };
+</script>
+</html>

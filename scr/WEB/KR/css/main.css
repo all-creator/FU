@@ -1,0 +1,56 @@
+body, html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: linear-gradient( #bbb, transparent 1px), linear-gradient( 90deg, #bbb, transparent 1px);
+    background-size: 15px 15px;
+    background-position: center center;
+    font-family: Comfortaa, serif;
+}
+
+.invite {
+    align-content: center;
+    font-size: 1.7em;
+    line-height: 45px;
+    margin-left: 80px;
+    font-family: Righteous, serif;
+}
+
+.btn {
+    background: #333333;
+    color: #f4f4f4;
+    margin-left: 80px;
+}
+
+#w_c {
+    margin-left: 80px;
+    margin-top: 20px;
+}
+
+#w {
+    margin-left: 20px;
+}
+
+.btn:hover {
+    background: #f4f4f4;
+    color: #333333;
+}
+
+.alf {
+    margin-left: 80px;
+    margin-top: 200px;
+}
+
+.label {
+    margin-left: 80px;
+}
+
+#word_input {
+    margin-left: 80px;
+}
+
+.word {
+    align-content: center;
+}
