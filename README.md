@@ -9,25 +9,34 @@
 
 ### WEB
 
-* [X] **[First](/scr/WEB/HTML/First) - Первое домашнее задание** - номер файла = номер задания; задание 33 - Задача 1 -> http://empire-org.fun:8080/fu-data
-* [X] **[Second](/scr/WEB/HTML/Second) - Второе домашнее задание** - номер файла = номер задания;
+* [X] **[First](/scr/WEB/First) - Первое домашнее задание 1-2**
+* [X] **[Second](/scr/WEB/Second) - Второе домашнее задание 3-4**
+* [X] **[Third](/scr/WEB/Third) - Третье домашнее задание 5-6** 
+* [X] **[Four](/scr/WEB/Four) - Четвёртое домашнее задание 7-8**
+* [X] **[Five](/scr/WEB/Five) - Пятое домашнее задание 9-10**
+* [X] **[Six](/scr/WEB/Six) - Шестое-седьмое домашнее задание 11-12**
+* [X] **[KR](/scr/WEB/KR) - Контрольная работа**
 
 ### Android
 
-* [X] **[First](/scr/Android/FirstPractice/app) - Первая Практическая Работа** - в папке app всё приложение; в папке apk, APK файл приложения
+* [X] **[Android](/scr/Android) - Архивы Практических Работ**
 
 ## Карта репозитория
 
 ![Карта репозитория](https://github.com/all-creator/FU/raw/master/resources/img/graf.png)
 
+Просто не трогай то что ниже
 ```mermaid
 
 flowchart LR;
     A[scr] --> BW(WEB)
     A[scr] --> BA(Android)
-    BA --> CA([FirstPractice])
+    A[scr] --> BP(Practicle)
+    BA --> CA([Zip All Practicle])
     BW --> CW([First])
     BW --> DW([Second])
+    BW --> EW([Third])
+    BW --> HW([Four])
+    BW --> FW([Five])
+    BW --> GW([Six])
 ```
-
-Это должно быть здесь вследствие того что ~~Microsoft сделали из GitHub кусок говна~~ GitHub не поддерживает адоптивные диаграммы.
