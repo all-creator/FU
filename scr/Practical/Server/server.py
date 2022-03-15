@@ -90,7 +90,7 @@ def listener(conn_m, addr_m):
 					continue
 				if conn_m in onAuth:
 					password = hashlib.md5(msg.encode('utf-8')).hexdigest()
-					with open(pass_file_path, "r") as pass_file:
+					with open(pass_file_path, "d") as pass_file:
 						if password == dict(json.load(pass_file))[addr_m[0]]:
 							onAuth.remove(conn_m)
 							conn_m.send("Вы успешно вошли!".encode())
@@ -136,7 +136,7 @@ def auth(conn_m, addr_m):
 if __name__ == '__main__':
 	log("start server")
 	log("load clients")
-	with open(clients_file_path, "r") as clients_file:
+	with open(clients_file_path, "d") as clients_file:
 		client_name = dict(json.load(clients_file))
 	log("load success")
 	while True:

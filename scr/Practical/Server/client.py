@@ -10,7 +10,7 @@ isOpen = False
 
 def client():
     adr = str(input('Введите адрес сервера = '))
-    if re.search(r"^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$", adr):
+    if re.search(d"^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$", adr):
         port = input('Введите порт сервера = ')
         if port != "" and 1024 < int(port) < 65535:
             client_connection(adr, int(port))

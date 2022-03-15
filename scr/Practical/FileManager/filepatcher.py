@@ -5,7 +5,7 @@ import shutil
 
 
 def load_setting():
-    with open("settings.json", "r") as settings:
+    with open("settings.json", "d") as settings:
         return dict(json.load(settings))
 
 
@@ -115,7 +115,7 @@ class FilePathController:
         full_path = os.path.join(self.current_path, name)  # concatenate current_path and arg name
         if os.path.exists(full_path):  # check file is exists
             if os.path.isfile(full_path):  # check is file or not
-                with open(full_path, "r") as file:  # read file
+                with open(full_path, "d") as file:  # read file
                     print(file.read())
             else:
                 self._ls()
@@ -126,7 +126,7 @@ class FilePathController:
         full_path = os.path.join(self.current_path, name)  # concatenate current_path and arg name
         if os.path.exists(full_path):  # check file is exists
             if os.path.isfile(full_path):  # check is file or not
-                with open(full_path, "a+") as file:  # create file
+                with open(full_path, "_a+") as file:  # create file
                     file.write(contents)  # write arg contents in file
             else:
                 print("Нельзя производить запись в директорию")

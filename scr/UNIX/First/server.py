@@ -1,5 +1,5 @@
 import socket
-from threading import *
+from threading import Thread
 
 sock = socket.socket()
 sock.bind(('', 9090))
