@@ -21,8 +21,8 @@ def create():
     global pol, canvas
     t = 0
     for _ in range(step + 1):
-        x = (abs((cos(t))) ** na) * a * sgn(cos(t))
-        y = (abs((sin(t))) ** na) * b * sgn(sin(t))
+        x = (abs((cos(t))) ** na) * a * sgn(cos(t)) #нахождение х элипса
+        y = (abs((sin(t))) ** na) * b * sgn(sin(t)) #нахождение у элипса
 
         dots.append(int(c(x)))
         dots.append(int(c(y)))
@@ -44,7 +44,7 @@ def resize(event):
             update()
     else:
         update()
-        n += 0.5
+        n += 0.5 #изменение угла эллипса
         if n > 4.9:
             n = 0.1
         na = 2 / n
@@ -53,7 +53,7 @@ def resize(event):
         update()
 
 
-r_w = 600
+r_w = 600 #размер canvas
 root = Tk()
 canvas = Canvas(root, width=r_w, height=r_w, bg="white")
 canvas.pack()
@@ -62,7 +62,7 @@ canvas.bind('<Button-1>', resize)
 
 dots = []
 
-a, b, n = 200, 200, 0.1
+a, b, n = 200, 200, 0.1 #начальные переменные
 na = 2 / n
 step = 100
 piece = (pi * 2) / step
