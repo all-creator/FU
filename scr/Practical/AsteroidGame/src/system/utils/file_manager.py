@@ -1,5 +1,9 @@
 import json
+import pickle
 import operator
+import os
+
+from game.player import Player
 
 score = {}
 
@@ -28,3 +32,21 @@ def sort_score():
     sorted_tuples = sorted(score.items(), key=operator.itemgetter(1))
     sorted_tuples.reverse()
     score = {k: v for k, v in sorted_tuples}
+
+
+def load_data():
+    with open("../data/data.json", "r") as read_file:
+        return json.load(read_file)
+
+
+def load_player_data(player):
+    if os.path.exists(f"../data/player-meta-{player}.pickle"):
+        with open(f"../data/player-meta-{player}.pickle", "rb") as read_file:
+            return pickle.load(read_file)
+    else:
+        return Player(player)
+
+
+def save_player_data(player):
+    with open(f"../data/player-meta-{player.name}.pickle", "wb") as read_file:
+        return pickle.dump(player, read_file)
