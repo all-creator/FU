@@ -8,6 +8,8 @@ option_screen = []
 
 shop_screen = []
 
+game_screen = []
+
 active_screen = auth_screen
 
 

@@ -1,7 +1,7 @@
 import sys
 
 from system.utils.file_manager import save_score, save_player_data
-from game.program import get_program
+from system.object.program import get_program
 
 
 def is_quit():

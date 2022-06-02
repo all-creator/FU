@@ -1,11 +1,13 @@
-from game.auth import Authorization
-from game.program import get_program
+from system.utils.auth import Authorization
+from system.object.program import get_program
 from gui.object.animations import Scale
-from gui.object.animator import IS_FOCUS, DIS_FOCUS, SPAWN
-from gui.object.menu import Label, Menu, Button, InputBox, Img, ImgButton
+from gui.object.animator import IS_FOCUS, DIS_FOCUS
+from gui.object.menu import Label, Menu, Button, InputBox, Img
 from system.object.display import dp_h, dp_w, adaptive_font
 from system.utils.exit import is_quit
 from system.utils.file_manager import load_score
+from system.utils.function import Function
+from system.enums import font
 from gui.enums import menus_screen, option_screen, auth_screen, menu_bg, set_active_screen, shop_screen
 
 """
@@ -64,31 +66,31 @@ main_menu = Menu(main_pos=[dp_w(8), dp_h(8)])
 menus_screen.append(main_menu)
 
 # Заголовок - название игры
-main_menu.add(Label(text="Астероиды", font='noteworthy', font_size=adaptive_font(2)))
+main_menu.add(Label(text="Астероиды", font=font, font_size=adaptive_font(2), is_sys_font=False))
 
 # Кнопка Начать игру
-new_game_button = Button(pos=[0, dp_h(12)], text="Начать Игру", font='rockwell', on_click=on_game)
+new_game_button = Button(pos=[0, dp_h(12)], text="Начать Игру", font='rockwell', on_click=Function(on_game))
 scale = Scale(new_game_button, 1.2)
 new_game_button.animator.bind(scale, IS_FOCUS)
 new_game_button.animator.bind(scale, DIS_FOCUS)
 main_menu.add(new_game_button)
 
 # Кнопка Магазин
-shop_button = Button(pos=[0, dp_h(20)], text="Магазин", font='rockwell', on_click=on_shop_screen)
+shop_button = Button(pos=[0, dp_h(20)], text="Магазин", font='rockwell', on_click=Function(on_shop_screen))
 scale = Scale(shop_button, 1.2)
 shop_button.animator.bind(scale, IS_FOCUS)
 shop_button.animator.bind(scale, DIS_FOCUS)
 main_menu.add(shop_button)
 
 # Кнопка Настройки
-options_button = Button(pos=[0, dp_h(28)], text="Настройки", font='rockwell', on_click=on_option_screen)
+options_button = Button(pos=[0, dp_h(28)], text="Настройки", font='rockwell', on_click=Function(on_option_screen))
 scale = Scale(options_button, 1.2)
 options_button.animator.bind(scale, IS_FOCUS)
 options_button.animator.bind(scale, DIS_FOCUS)
 main_menu.add(options_button)
 
 # Кнопка Выход
-exit_button = Button(pos=[0, dp_h(36)], text="Выход", font='rockwell', on_click=is_quit)
+exit_button = Button(pos=[0, dp_h(36)], text="Выход", font='rockwell', on_click=Function(is_quit))
 scale = Scale(exit_button, 1.2)
 exit_button.animator.bind(scale, IS_FOCUS)
 exit_button.animator.bind(scale, DIS_FOCUS)
@@ -120,9 +122,10 @@ auth = Authorization(auth_menu)
 
 auth_menu.add(Label(text="Введите ваш ник", font_size=adaptive_font(1.2)))
 auth_input = InputBox(pos=[0, dp_h(3)], active=True, color=(240, 240, 0))
+auth_input.set_on_return_pressed(Function(on_auth, [auth_input.get_text, info_account.update_text]))
 auth_menu.add(auth_input)
-auth_menu.add(Button(pos=[dp_w(2), dp_h(6)], text="Продолжить", on_click=on_auth,
-                     on_click_params=[auth_input.get_text, info_account.update_text]))
+auth_menu.add(Button(pos=[dp_w(2), dp_h(6)], text="Продолжить", on_click=Function(on_auth,
+                     [auth_input.get_text, info_account.update_text])))
 
 auth_menu.resize_bg()
 
@@ -131,7 +134,7 @@ options_menu = Menu(main_pos=[dp_w(28), dp_h(28)], bg=menu_bg)
 option_screen.append(options_menu)
 
 options_menu.add(Label(text="Настройки", font_size=adaptive_font(1.5)))
-options_menu.add(Button(pos=[dp_w(2), dp_h(10)], text="Назад", on_click=on_main_screen, font_size=adaptive_font(1.2)))
+options_menu.add(Button(pos=[dp_w(2), dp_h(10)], text="Назад", on_click=Function(on_main_screen), font_size=adaptive_font(1.2)))
 
 options_menu.resize_bg()
 
@@ -149,6 +152,6 @@ shop_menu.add(shop_start_ship_img)
 
 shop_menu.add(Label(text="Куплено", pos=[dp_w(16.4), dp_h(27)], font_size=adaptive_font(1.2), color=(170, 170, 170)))
 
-shop_menu.add(Button(pos=[dp_w(17), dp_h(32)], text="Назад", on_click=on_main_screen, font_size=adaptive_font(1.2)))
+shop_menu.add(Button(pos=[dp_w(17), dp_h(32)], text="Назад", on_click=Function(on_main_screen), font_size=adaptive_font(1.2)))
 
 shop_menu.resize_bg()

@@ -1,11 +1,11 @@
 import pygame
 
 from system.utils.time_utils import current_milli_time
-from gui.utils.event import pars_event
+from system.utils.event import pars_event
 from gui.init import gen_score
 from gui.enums import get_active_screen
 from system.enums import screen, bg
-from game.program import get_program
+from system.object.program import get_program
 
 millis = current_milli_time()
 real_millis = current_milli_time()

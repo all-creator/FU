@@ -31,11 +31,20 @@ class Sound:
             return None
 
     def play(self):
+        self.stop()
         if self.music:
             pygame.mixer.music.load("../res/music/menu-sound-Incomplete.ogg", "ogg")
             pygame.mixer.music.play(-1, 0.0, 800)
             pygame.mixer.music.set_volume(0.6)
 
-    def stop(self):
+    def play_game(self):
+        self.stop()
+        if self.music:
+            pygame.mixer.music.load("../res/music/game-sound-TakeMe.ogg", "ogg")
+            pygame.mixer.music.play(-1, 0.0, 800)
+            pygame.mixer.music.set_volume(0.6)
+
+    @staticmethod
+    def stop():
         pygame.mixer.music.stop()
 

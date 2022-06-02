@@ -1,3 +1,7 @@
+from utils import dist
+from system.object.display import get_default_screen
+
+
 class GameObj:
     def __init__(self, pos, vel, ang, ang_vel, image, info, sound=None):
         if sound:
@@ -38,8 +42,8 @@ class GameObj:
 
     def update(self):
         self.angle += self.angle_vel
-        self.pos[0] = (self.pos[0] + self.vel[0]) % WIDTH
-        self.pos[1] = (self.pos[1] + self.vel[1]) % HEIGHT
+        self.pos[0] = (self.pos[0] + self.vel[0]) % get_default_screen().get_width()
+        self.pos[1] = (self.pos[1] + self.vel[1]) % get_default_screen().get_height()
         self.age += 1
         if self.age < self.lifespan:
             return False

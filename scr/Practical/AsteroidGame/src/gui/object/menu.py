@@ -47,7 +47,7 @@ class MenuObject:
 
 
 class Label(MenuObject):
-    def __init__(self, id_=None, pos=None, text="", font=None, font_size=None, color=(255, 255, 255)):
+    def __init__(self, id_=None, pos=None, text="", font=None, font_size=None, color=(255, 255, 255), is_sys_font=True):
         super().__init__(id_=id_, pos=pos)
         if font_size is None:
             font_size = adaptive_font()
@@ -55,7 +55,10 @@ class Label(MenuObject):
         self.font = font
         self.font_size = font_size
         self.color = color
-        self.font_item = pygame.font.SysFont(self.font, self.font_size)
+        if is_sys_font:
+            self.font_item = pygame.font.SysFont(self.font, self.font_size)
+        else:
+            self.font_item = pygame.font.Font(self.font, self.font_size)
         self.item = self.font_item.render(self.text, True, self.color)
         Event(self, self.is_load)
 
@@ -88,11 +91,8 @@ class Button(Label):
     def clicked(self):
         if self.is_killed:
             return
-        if self.on_click is not None:
-            if self.params is not None:
-                self.on_click(self.params)
-            else:
-                self.on_click()
+        if self.on_click:
+            self.on_click.run()
         if sound.get_on_click_sound() is not None:
             sound.get_on_click_sound().play()
 
@@ -123,10 +123,14 @@ class ImgButton(Button):
 
 class InputBox(Label):
     def __init__(self, id_=None, pos=None, text="", font=None, font_size=None, color=(255, 255, 255), rect=None,
-                 active=False):
+                 active=False, on_return_pressed=None):
         super().__init__(id_=id_, pos=pos, text=text, font=font, font_size=font_size, color=color)
         self.rect = rect
         self.active = active
+        self.on_return = on_return_pressed
+
+    def set_on_return_pressed(self, on_return_pressed):
+        self.on_return = on_return_pressed
 
     def handle_event(self, event):
         if self.active:
@@ -135,6 +139,8 @@ class InputBox(Label):
             else:
                 if event.key != pygame.K_RETURN:
                     self.text += event.unicode
+                else:
+                    self.on_return.run()
             self.item = self.font_item.render(self.text, True, self.color)
 
     def render(self, screen):

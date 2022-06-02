@@ -1,4 +1,8 @@
 from utils import angle_to_vector
+from system.object.display import get_default_screen
+from game_object import GameObj
+
+import math
 
 
 class Ship:
@@ -20,7 +24,7 @@ class Ship:
                        self.pos[1] + 40 + self.radius * self.forward[1]]
 
         missile_vel = [self.vel[0] + 6 * self.forward[0], self.vel[1] + 6 * self.forward[1]]
-        missile_group.add(Sprite(missile_pos, missile_vel, self.angle, 0, missile_image, missile_info, missile_sound))
+        missile_group.add(GameObj(missile_pos, missile_vel, self.angle, 0, missile_image, missile_info, missile_sound))
 
     def set_thrust(self, thrust):
         self.thrust = thrust
@@ -51,8 +55,8 @@ class Ship:
             self.vel[1] += self.forward[1] * acc
         self.vel[0] *= (1 - fric)
         self.vel[1] *= (1 - fric)
-        self.pos[0] = (self.pos[0] + self.vel[0]) % (WIDTH - self.radius)
-        self.pos[1] = (self.pos[1] + self.vel[1]) % (HEIGHT - self.radius)
+        self.pos[0] = (self.pos[0] + self.vel[0]) % (get_default_screen().get_width() - self.radius)
+        self.pos[1] = (self.pos[1] + self.vel[1]) % (get_default_screen().get_height() - self.radius)
 
     def set_angle_vel(self, vel):
         self.angle_vel = vel

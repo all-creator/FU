@@ -1,5 +1,5 @@
-from game.options import Options
-from game.shop import Shop
+from gui.object.options import Options
+from gui.object.shop import Shop
 
 
 class Player:
