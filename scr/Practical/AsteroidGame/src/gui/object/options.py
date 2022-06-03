@@ -29,8 +29,7 @@ class Options:
             self.disable_sound()
         else:
             self.enable_sound()
-        sound.set_on_click(self.sound)
-        sound.set_on_focus(self.sound)
+        sound.set_sound(self.sound)
         self.sound_img.item = pygame.transform.scale(pygame.image.load(self.get_sound_img()), self.sound_img.size)
 
     def switch_music(self):
@@ -63,8 +62,7 @@ class Options:
                                    on_click=Function(self.switch_sound))
         option_screen[0].add(self.music_img)
         option_screen[0].add(self.sound_img)
-        sound.set_on_click(self.sound)
-        sound.set_on_focus(self.sound)
+        sound.set_sound(self.sound)
         sound.set_music(self.music)
 
     def out(self):

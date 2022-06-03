@@ -5,15 +5,17 @@ program = None
 
 
 class Program:
-    def __init__(self, version, player=None):
+    def __init__(self, version):
         self.version = version
-        self.current_player = player
-        self.game = Game(player)
+        self.current_player = None
+        self.game = None
 
     def set_player(self, player):
         self.current_player = load_player_data(player)
+        self.current_player.set_default_ship()
         self.current_player.options_settings.init()
         self.current_player.shop.init()
+        self.game = Game(self.current_player)
 
 
 def get_program():

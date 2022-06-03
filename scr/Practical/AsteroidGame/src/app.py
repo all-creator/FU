@@ -35,7 +35,8 @@ def app():
 
             bg.render(screen)
 
-            get_program().game.render()
+            if get_program().game and get_program().game.load:
+                get_program().game.render(screen)
 
             for menu in get_active_screen():
                 menu.render(screen)
@@ -44,6 +45,8 @@ def app():
         if current_milli_time() >= s_millis + 1000:
             fps()
             s_millis = current_milli_time()
+            if get_program().game and get_program().game.load:
+                get_program().game.gen_asteroid()
 
 
 if __name__ == '__main__':

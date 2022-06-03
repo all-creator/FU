@@ -1,5 +1,3 @@
-from game.meta.meta import MetaObject
-
 from gui.enums import shop_screen
 from system.object.display import dp_w, dp_h, adaptive_font
 from gui.object.menu import ImgButton, Label, Img
@@ -9,7 +7,6 @@ from gui.object.animations import Scale
 class Shop:
     def __init__(self, money=0):
         self.money = money
-        self.meta = MetaObject()
         self.left_img: ImgButton = None
         self.right_img: ImgButton = None
 

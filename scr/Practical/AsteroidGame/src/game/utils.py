@@ -4,6 +4,8 @@ import random
 
 from system.object.background import DynamicBackgroundItem
 from system.enums import bg_item
+from gui.object.animations import Scale
+from gui.object.menu import Img
 
 
 def gen_dynamic_bg(bg, screen):
@@ -20,17 +22,27 @@ def gen_dynamic_bg(bg, screen):
                                                      random.random() * round(10 * random.random())], scale_size=[70, 70]))
 
 
-def rotate_center(image, angle):
+def rotate_center(image: pygame.Surface, angle):
     orig_rect = image.get_rect()
     rot_image = pygame.transform.rotate(image, angle)
     rot_rect = orig_rect.copy()
     rot_rect.center = rot_image.get_rect().center
-    rot_image = rot_image.subsurface(rot_rect).copy()
+    try:
+        rot_image = rot_image.subsurface(rot_rect).copy()
+    except ValueError:
+        pass
     return rot_image
 
 
+def load_img(img, size=1):
+    img = Img(img)
+    scale = Scale(img, size)
+    scale.active()
+    return scale.item.item
+
+
 def angle_to_vector(ang):
-    return [math.cos(ang), -math.sin(ang)]
+    return [math.cos(ang), - math.sin(ang)]
 
 
 def dist(p, q):

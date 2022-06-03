@@ -3,30 +3,44 @@ import pygame
 
 class Sound:
     def __init__(self):
-        self.on_focus = False
-        self.on_click = False
+        self.is_sound = False
         self.music = False
         self.on_click_sound = pygame.mixer.Sound("../res/music/click-on-button.ogg")
+        self.on_click_sound.set_volume(0.9)
         self.on_focus_sound = pygame.mixer.Sound("../res/music/focus-on-button.ogg")
+        self.on_focus_sound.set_volume(0.9)
+        self.ship_active = pygame.mixer.Sound("../res/music/ship-active.ogg")
+        self.ship_active.set_volume(0.4)
+        self.missile = pygame.mixer.Sound("../res/music/missile-sound.ogg")
+        self.missile.set_volume(0.6)
 
     def set_music(self, boolean):
         self.music = boolean
 
-    def set_on_click(self, boolean):
-        self.on_click = boolean
-
-    def set_on_focus(self, boolean):
-        self.on_focus = boolean
+    def set_sound(self, boolean):
+        self.is_sound = boolean
 
     def get_on_click_sound(self):
-        if self.on_click:
+        if self.is_sound:
             return self.on_click_sound
         else:
             return None
 
     def get_on_focus_sound(self):
-        if self.on_focus:
+        if self.is_sound:
             return self.on_focus_sound
+        else:
+            return None
+
+    def get_active_ship_sound(self):
+        if self.is_sound:
+            return self.ship_active
+        else:
+            return None
+
+    def get_missile_sound(self):
+        if self.is_sound:
+            return self.missile
         else:
             return None
 
