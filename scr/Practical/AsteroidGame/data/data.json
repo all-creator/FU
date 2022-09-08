@@ -1,0 +1,7 @@
+{
+  "version-list": [
+    "0.6-sound","0.7-animated","0.8-refactoring","0.9-auth", "0.10-options", "0.11-pre-shop", "0.12-game-launch",
+    "0.13-game-snapshot&program-optimization"
+  ],
+  "version": "0.14-game-prerelease"
+}

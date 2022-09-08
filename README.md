@@ -23,9 +23,6 @@
 
 ## Карта репозитория
 
-![Карта репозитория](https://github.com/all-creator/FU/raw/master/resources/img/graf.png)
-
-Просто не трогай то что ниже
 ```mermaid
 
 flowchart LR;
