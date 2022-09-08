@@ -8,12 +8,11 @@ let p_two = {
 };
 let game = {
     word: "",
-    ans_word: ""
+    ans_word: "",
+    player: NaN
 };
 
 // utils
-
-let alf = ["А","Б","В","Г","Д","Е","Ё","Ж","З","И","Й","К","Л","М","Н","О","П","Р","С","Т","У","Ф","Х","Ц","Ч","Ш","Щ","Ъ","Ы","Ь","Э","Ю","Я"]
 
 function printInv(str) {
     document.getElementsByClassName("invite")[0].innerHTML = str;
@@ -41,7 +40,11 @@ function choosePlayer(){
     let player = getP()
     if (player.indexOf("первый")) {
         p_one.isDo = true
-    } else p_two.isDo = true
+        game.player = 1
+    } else {
+        p_two.isDo = true
+        game.player = 2
+    }
     printInv(player)
 }
 
@@ -69,14 +72,27 @@ function setWord(str){
 function answer(char){
     if (isInWord(char)){
         printLabel("Верно!")
-        let j = game.word.indexOf(char)
-        game.ans_word = game.ans_word.replaceAt(j, char)
+        let str = game.word
+        for (let j = 0; j < str.length; j++) {
+            if (game.word.charAt(j) === char){
+                game.ans_word = game.ans_word.replaceAt(j, char)
+            }
+        }
         document.getElementById('w').innerHTML = game.ans_word
+        document.getElementById(char).style.color = 'green';
+        if (game.word === game.ans_word) {
+            printInv("Вы выиграли")
+            printLabel("Загаданное слово: " + game.word)
+        }
     } else {
         printLabel("Не верно!")
         p_one.c_errors--;
         document.getElementById('c_errors').innerHTML = "Осталось ошибок: " + p_one.c_errors
         document.getElementById(char).style.color = 'red';
+        if (p_two.c_errors === 0 || p_one.c_errors === 0) {
+            printInv("Вы проиграли")
+            printLabel("Загаданное слово: " + game.word)
+        }
     }
     document.getElementById('w_st').onclick = function() {
         answer(document.getElementById('word_input').value);
