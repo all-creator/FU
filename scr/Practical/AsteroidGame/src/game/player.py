@@ -25,9 +25,9 @@ class Player:
         return self.ship
 
     def set_default_ship(self):
-        img: pygame.Surface = load_img("../res/ships/asteroid-ship.png", 0.2)
+        img: pygame.Surface = load_img("../res/ships/start-ship.png", 0.2)
         w = img.get_width() - 256
         h = img.get_height() - 256
         self.ship = Ship([dp_w(28), dp_h(28)], [0, 0], img,
-                         load_img("../res/ships/asteroid-ship-active.png", 0.2),
+                         load_img("../res/ships/start-ship-active.png", 0.2),
                          ImgMeta([w/2, h/2], [w,  h], (w/2+h/2)/2))

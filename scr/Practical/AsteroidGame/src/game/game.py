@@ -9,6 +9,7 @@ from system.enums import font, sound
 from system.object.display import dp_w
 from system.utils.file_manager import score
 from game.game_object import Asteroid
+from game.utils import group_collide, group_group_collide
 
 font_size = adaptive_font(0.9)
 menu = Menu(border=[0, 0])
@@ -51,6 +52,15 @@ class Game:
             item.render(screen)
             item.update()
 
+        if group_collide(self.asteroid_group, self.ship) > 0:
+            if self.lives > 1:
+                self.dec_lives()
+            else:
+                self.stop()
+
+        hits = group_group_collide(self.asteroid_group, self.missile_group)
+        self.add_score(hits * 100)
+
     def inc_lives(self):
         self.lives += 1
         self.lives_label.update_text("Жизни: " + str(self.lives))
@@ -76,7 +86,7 @@ class Game:
     def stop(self):
         from system.enums import bg, screen
         set_active_screen(menus_screen)
-        bg.img = pygame.image.load("../res/bg/bg-root.png")
+        bg.img = pygame.image.load("../res/bg/bg-root.jpeg")
         bg.resize(screen.get_width(), screen.get_height())
         score.setdefault(self.player.name, self.score)
         self.load = False

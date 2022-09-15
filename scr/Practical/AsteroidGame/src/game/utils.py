@@ -41,6 +41,27 @@ def load_img(img, size=1):
     return scale.item.item
 
 
+def group_collide(group, other_object):
+    counter = len(group)
+
+    for element in list(group):
+        if element.collide(other_object):
+            group.remove(element)
+
+    return counter - len(group)
+
+
+def group_group_collide(first_group, second_group):
+    counter = 0
+
+    for element in list(first_group):
+        if group_collide(second_group, element) > 0:
+            counter += 1
+            first_group.remove(element)
+
+    return counter
+
+
 def angle_to_vector(ang):
     return [math.cos(ang), - math.sin(ang)]
 

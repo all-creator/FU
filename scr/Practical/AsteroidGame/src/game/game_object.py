@@ -3,6 +3,7 @@ import pygame
 from game.utils import dist, rotate_center, load_img
 from system.object.display import get_default_screen
 from system.enums import sound, screen
+from pygame.sprite import Sprite
 
 
 class ImgMeta:
@@ -34,6 +35,7 @@ class ImgMeta:
 
 class GameObj:
     def __init__(self, pos, vel, ang, ang_vel, image, info, _sound=None):
+        super().__init__()
         if _sound:
             _sound.play()
         self.vel = [vel[0], vel[1]]
@@ -92,5 +94,8 @@ class Missile(GameObj):
 
 class Asteroid(GameObj):
     def __init__(self, pos, vel, ang, ang_vel):
-        super().__init__(pos, vel, ang, ang_vel, load_img("../res/game/asteroid.png", 0.3), ImgMeta([5, 5], [10, 10], 5,),
+        img: pygame.Surface = load_img("../res/game/asteroid_sprite.png", 0.3)
+        w = img.get_width()
+        h = img.get_height()
+        super().__init__(pos, vel, ang, ang_vel, img, ImgMeta([w/2, h/2], [w, h], int((w/2 + h/2)/2)),
                          _sound=sound.get_missile_sound())

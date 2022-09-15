@@ -61,4 +61,5 @@ class DynamicBackgroundItem:
             self.pos = self.start_pos
 
     def render(self, screen):
-        screen.blit(self.img, self.pos)
+        #screen.blit(self.img, self.pos)
+        pass
