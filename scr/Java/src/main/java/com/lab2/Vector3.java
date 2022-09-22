@@ -58,4 +58,25 @@ public class Vector3 {
     public void setZ(float z) {
         this.z = z;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Vector3 vector3 = (Vector3) o;
+
+        if (Float.compare(vector3.getX(), getX()) != 0) return false;
+        if (Float.compare(vector3.getY(), getY()) != 0) return false;
+        return Float.compare(vector3.getZ(), getZ()) == 0;
+    }
+
+    @Override
+    public String toString() {
+        return "Vector3{" +
+                "x=" + x +
+                ", y=" + y +
+                ", z=" + z +
+                '}';
+    }
 }
